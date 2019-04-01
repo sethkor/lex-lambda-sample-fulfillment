@@ -1,21 +1,21 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  Sample Lambda for AWS Connect in Go
+  Sample Lambda Fulfilment for AWS Lex in Go
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
   Function:
     Timeout: 5
 
 Resources:
-  LexSampleLambdaGo:
+  LexLambdaSampleFulfilmentGo:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: lex-lambda-sample.zip
-      Handler: lex-lambda-sample
+      CodeUri: lex-lambda-sample-fulfilment.zip
+      Handler: lex-lambda-sample-fulfilment
       Runtime: go1.x
       Tracing: Active # https://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html
-      FunctionName: LexLambdaSample
+      FunctionName: LexLambdaSampleFulfilment
       Description: A sample Lambda in Go for AWS Lex
 #      Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
 #        Variables:
@@ -49,5 +49,5 @@ Resources:
 Outputs:
 
   LexLambda:
-    Description: "First Lambda Function ARN"
-    Value: !GetAtt LexSampleLambdaGo.Arn
+    Description: "Lex Lambda Sample Fulfilemnt ARN"
+    Value: !GetAtt LexLambdaSampleFulfilmentGo.Arn
