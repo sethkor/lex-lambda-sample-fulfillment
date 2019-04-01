@@ -1,0 +1,53 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Sample Lambda for AWS Connect in Go
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 5
+
+Resources:
+  LexSampleLambdaGo:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: lex-lambda-sample.zip
+      Handler: lex-lambda-sample
+      Runtime: go1.x
+      Tracing: Active # https://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html
+      FunctionName: LexLambdaSample
+      Description: A sample Lambda in Go for AWS Lex
+#      Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+#        Variables:
+#          EXAMPLE: Hello world!
+      Policies:
+        - AWSLambdaExecute # Managed Policy
+        - AmazonLexFullAccess
+#        - Version: '2012-10-17' # Policy Document
+#          Statement:
+#            - Effect: Allow
+#              Action:
+#                - s3:GetObject
+#                - s3:GetObjectACL
+#              Resource: 'arn:aws:s3:::connect-b959a150d4eb/*'
+#            - Effect: Allow
+#              Action:
+#                - ec2:DescribeNetworkInterfaces
+#                - ec2:CreateNetworkInterface
+#                - ec2:DeleteNetworkInterface
+#              Resource: '*'
+#
+#      VpcConfig:
+#        SecurityGroupIds:
+#          - sg-0d06f533f32421094
+#        SubnetIds:
+#          - subnet-072863fedf36830df
+#          - subnet-0a29ae7738bb76f82
+#          - subnet-0d16f3f3738f5081a
+
+
+Outputs:
+
+  LexLambda:
+    Description: "First Lambda Function ARN"
+    Value: !GetAtt LexSampleLambdaGo.Arn
