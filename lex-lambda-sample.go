@@ -57,11 +57,14 @@ func HandleRequest(ctx context.Context, lexEvent events.LexEvent) (events.LexEve
    }
 
    event.DialogAction.Message = make(map[string]string,2)
+   //event.DialogAction.Message["contentType"] = "SSML"
    event.DialogAction.Message["contentType"] = "SSML"
 
    if lexEvent.CurrentIntent.Name == "DayNow" {
-      event.DialogAction.Message["content"] = time.Now().In(loc).Weekday().String()
-   } else {
+      event.DialogAction.Message["content"] = fmt.Sprintf("<speak><prosody rate=\"slow\"><amazon:auto-breaths>%s</amazon:auto-breaths></prosody></speak>", time.Now().In(loc).Weekday().String())
+   } else if lexEvent.CurrentIntent.Name == "nonalchol" {
+      event.DialogAction.Message["content"] = "<speak><prosody rate=\"slow\"><amazon:auto-breaths>Zero percent Jacob</amazon:auto-breaths></prosody></speak>"
+   }else {
 
       //timeStr := fmt.Sprintf("<speak><prosody rate=\"slow\"><amazon:auto-breaths>The time is %s.</amazon:auto-breaths></prosody></speak>", time.Now().In(loc).Format(time.Kitchen))
       event.DialogAction.Message["content"] = fmt.Sprintf("<speak><prosody rate=\"slow\"><amazon:auto-breaths>The time is %s.</amazon:auto-breaths></prosody></speak>", time.Now().In(loc).Format(time.Kitchen))
