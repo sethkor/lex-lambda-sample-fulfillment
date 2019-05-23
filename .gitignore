@@ -14,4 +14,8 @@
 .idea/
 packaged.yaml
 *.zip
+<<<<<<< HEAD
 lex-lambda-sample
+=======
+lex-lambda-sample-fulfilment
+>>>>>>> eb0313a46998c8e32e0225d604ec99f4250ced16
