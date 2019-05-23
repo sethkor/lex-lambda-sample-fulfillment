@@ -1,10 +1,10 @@
-# lex-lambda-sample-go
+# lex-lambda-sample-fulfillment
 A sample Lambda that can be invoked by lex.  It also makes a good template for a lambda in Go.  [AWS CLI](https://aws.amazon.com/cli/) and [AWS SAM](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html) is used for Lambda deployment.  Make sure you've installed these and [Go](https://golang.org/).  [Brew](https://brew.sh/) is usefull for all fo this if your on a mac.
 
 Install this package with:
 
 ```
-$ go get github.com/versent/connect-sample-lambda-go
+$ go get github.com/versent/lex-lambda-sample-fulfillment
 
 ```
 To build and deploy we use Makefiles, AWS SAM and the AWS CLI.
@@ -24,12 +24,12 @@ Value               | Description
 Sample values:
 
 ```
-SAM-BUCKET=versent-connect-sam
+SAM-BUCKET=
 STACK-NAME=connect-sla-s3-lambda
-BUILD-PROFILE=versent
-DEPLOY-PROFILE=versent
+BUILD-PROFILE
+DEPLOY-PROFILE=
 EXE-NAME=connect-sample-lambda-go
-CONNECT-ARN=arn:aws:connect:ap-southeast-2:293499315857:instance/cfec03c9-bf43-4a82-b660-2c98aecddc61
+CONNECT-ARN=
 LAMBDA-NAME=ConnectSampleLambdaGo
 ```
 Make targets:
