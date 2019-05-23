@@ -1,5 +1,5 @@
-# connect-sample-lambda-go
-A sample Lambda that can be invoked in AWS Connect.  [AWS CLI](https://aws.amazon.com/cli/) and [AWS SAM](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html) is used for Lambda deployment.  Make sure you've installed these and [Go](https://golang.org/).  [Brew](https://brew.sh/) is usefull for all fo this if your on a mac.
+# lex-lambda-sample-go
+A sample Lambda that can be invoked by lex.  It also makes a good template for a lambda in Go.  [AWS CLI](https://aws.amazon.com/cli/) and [AWS SAM](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html) is used for Lambda deployment.  Make sure you've installed these and [Go](https://golang.org/).  [Brew](https://brew.sh/) is usefull for all fo this if your on a mac.
 
 Install this package with:
 
